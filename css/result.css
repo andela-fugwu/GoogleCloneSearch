@@ -1,0 +1,153 @@
+nav {
+  background-color: #f2f2f2;
+}
+
+ul {
+    padding-top: .5em;
+    padding-bottom: .6em;
+}
+
+button {
+  border: none;
+}
+
+.full_width {
+  width: 100%;
+}
+
+#result_left, section, header {
+  float: left;
+}
+
+#result_left img {
+  width: 6em;
+  opacity: 1;
+  margin-right: 1em;
+  top: 1em;
+}
+
+#result_left #search_field {
+  margin: 0;
+  width: 45em;
+  padding: 0;
+}
+
+#search_b {
+  position: relative;
+  left: -.4em;
+  top: .7em;
+  width: 4em;
+  height: 2.18em;
+  background:#4285F4 url(../img/search_icon.png) center center no-repeat ;
+  background-size: 2em;
+  border-radius: 0 .18em .18em 0;
+}
+
+#down_bar {
+  border-bottom: 2px solid #f2f2f2;
+}
+
+#settings_button {
+  float: right;
+  margin-right: 2em;
+  display: inline-block;
+  cursor: default;
+  background: #fff url(../img/settings_icon.png) center center no-repeat ;
+  width: 4em;
+  height: 2.18em;
+  padding: 2em 0;
+}
+
+#down_bar ul {
+  display: inline-block;
+  margin-left: 8.8em;
+  padding: 1.5em 0;
+}
+
+#down_bar li {
+  color: #404040;
+  padding-right: 1em;
+}
+
+.active {
+  border-bottom: 3px solid red;
+  padding-bottom: 1.9em;
+  color: red;
+}
+
+
+section {
+  clear: both;
+  line-height: 1.4;
+  width: 45%;
+  margin-left: 9em;
+}
+
+section li {
+  margin-bottom: 1.3em;
+}
+#result_time {
+  font-size: .8em;
+  color: #404040;
+  margin: 1em 0;
+}
+
+.no_overflow {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.title_r {
+  color: blue;
+  font-size: 1.3em;
+  max-width: 30em;
+}
+
+.link_r {
+  color: green;
+  font-size: .82em;
+  width: 40em;
+}
+
+.result_t {
+  width: 37em;
+  max-height: 2.7em;
+  font-size: .91em;
+  white-space: normal;
+}
+
+#drop_down {
+  width: 30%;
+  float: right;
+  color: #404040;
+  font-size: .8em;
+  margin-top:1em; 
+}
+
+#drop_down h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+#drop_down label {
+  margin-bottom: .7em;
+}
+
+.drop_input {
+  margin-bottom: 1em;
+  width: 17em;
+  border-radius: 5px;
+}
+
+#more {
+  
+}
+
+#left_footer {
+  padding-top: 1em;
+}
+
+#location {
+  padding-right: .8em;
+}
