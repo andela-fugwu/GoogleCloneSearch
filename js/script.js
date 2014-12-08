@@ -21,6 +21,7 @@ var search_object = {
   },
 
   init: function () {
+
     $("#settings_button").click( function () {
       $("#drop_down").toggle("slow");
     });
@@ -43,7 +44,6 @@ var search_object = {
       event.preventDefault();
       var search = $('#search_field').val();
       search_object.make_json(search, "blogs");
-
       $('#content').addClass('diff_content');
       $('head').append('<link rel="stylesheet" href="css/result.css">');
       $('#content_2').removeClass('diff_content');
@@ -84,8 +84,11 @@ var search_object = {
   application: function (data) {
     console.log(data);
     if (data.totalResults === 0){
+      $('section').html('<p>No Results found</p>');
       $('section').show();
       $('#loading').hide();
+      search_object.data = 0;
+      $("#more").hide();
     }
     else
     {  
