@@ -41,8 +41,21 @@ var search_object = {
       $('#search_field_2').val(search);
       $("#drop_down").hide();
     });
+    
     $("#more").click( function () {
-      search_object.update(search_object.data);
+      if (search_object.post_number === 99)
+      {
+        $('#result').html("");
+        $('section').hide();
+        $('#loading').show();
+        search_object.post_number = 0;
+        var api = 'https://webhose.io/'+ search_object.data.next +'';
+        
+        $.getJSON(api, search_object.application);
+      }
+      else {
+        search_object.update(search_object.data);
+      }
     });
 
     $('#search_b').click( function () {
@@ -52,6 +65,7 @@ var search_object = {
   }, 
 
   application: function (data) {
+    console.log(data);
     search_object.data = data;
     search_object.update(data);
     $('#loading').hide();
@@ -73,4 +87,3 @@ var search_object = {
   }  
 }  
 search_object.init(); 
-// search_object.make_json("ebola", "");
