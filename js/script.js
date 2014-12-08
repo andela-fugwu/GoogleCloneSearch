@@ -14,7 +14,7 @@ var search_object = {
       result +='<p class="result_t no_overflow">'+ posts[i].text +'</p>';
       result +='</li>';
       search_object.post_number++;
-      if(search_object.post_number === data.totalResults )
+      if(search_object.post_number >= data.totalResults )
         break;
     };
     $('#result').append(result);
@@ -57,7 +57,7 @@ var search_object = {
       if(search_object.post_number === search_object.data.totalResults ){
         $("#more").text('No more results');
       }
-      else if (search_object.post_number === 99)
+      else if (search_object.post_number === 100)
       {
         $('#result').html("");
         $('section').hide();
@@ -68,6 +68,7 @@ var search_object = {
         $.getJSON(api, search_object.application);
       }
       else {
+        console.log(search_object.post_number);
         search_object.update(search_object.data);
         $("#more").prop('disabled', false);
         $("#more").text('Load More');
