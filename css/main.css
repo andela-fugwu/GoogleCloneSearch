@@ -128,13 +128,22 @@ section {
 /*down section styles*/
 /*search fied styles*/
 #search_field, #search_field_2 {
+<<<<<<< HEAD
 	background: url('../img/mic.gif') no-repeat 99% center;
 	background-width:13px;
+=======
+	background: #fff url('../img/mic.gif') no-repeat 99% center;
+>>>>>>> gh-pages
 	width: 570px;
 	height: 27px;
 	margin: 0 auto;
 	border: #cdcdcd 1px solid;
 	opacity:0.6;
+<<<<<<< HEAD
+=======
+	padding-left: 1em;
+	font-size: 1.2em; 
+>>>>>>> gh-pages
 }
 
 #search_field:hover, #search_field_2:hover {
