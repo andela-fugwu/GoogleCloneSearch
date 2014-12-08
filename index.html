@@ -30,14 +30,16 @@
               </li>
             </ul>
           </div>
-          <div id="down section">
+          <div id="down_section">
+            <form>
             <input type="text" id="search_field">
-            <div id="google_input">
-              <ul id="google_buttons">
-                <li><button class="buttons" id="google_search">Google Search</button></li>
-                <li><button class="buttons">I'm Feeling Lucky</button></li>
-              </ul>
-            </div>
+              <div id="google_input">
+                <ul id="google_buttons">
+                  <li><button class="buttons" id="google_search">Google Search</button></li>
+                  <li><button class="buttons">I'm Feeling Lucky</button></li>
+                </ul>
+              </div>
+            </form>
             <ul id="languages">
               <li><p>Google.com.ng offered in:</p></li>
               <li><a href="" class="languages">Harshen Housa</a></li>
@@ -52,11 +54,13 @@
     <div id="content_2" class="diff_content">
       <header>
         <nav>
-          <div id="result_left">
-            <img src="img/logo.png" alt="google logo">
-            <input type="text" id="search_field_2">
-            <button id="search_b"></button>
-          </div>
+          <form>
+            <div id="result_left">
+              <img src="img/logo.png" alt="google logo">
+              <input type="text" id="search_field_2">
+              <button id="search_b"></button>
+            </div>
+          </form>
           <ul>
             <li><a href="">+You</a></li>
             <li><a href="">Gmail</a></li>
@@ -77,25 +81,28 @@
         <p id="result_time"></p>
         <ul id="result">
         </ul>
-        <button id="more">More</button>
+        <button id="more" class="buttons">Load More</button>
       </section>
       <div id="loading">
         <img src="img/loading.gif" alt="loading gif">
       </div>
-      <div id="drop_down">
-        <h2>Customize Result</h2>
-        <label>This exact wording or phrase</label>
-        <br/>
-        <input type="text" class="drop_input">
-        <br/>
-        <label>Without any of these unwanted words:</label>
-        <br/>
-        <input type="text" class="drop_input">
-      </div>
+      <form>
+        <div id="drop_down">
+          <h2>Customize Result</h2>
+          <label>Without any of these unwanted words:</label>
+          <br/>
+          <input type="text" class="drop_input" id="minus_exact_input">
+          <button class="buttons" id="drop_input_b">Submit</button>
+        </div>
+      </form>
     </div>
     <footer>
       <span id="left_footer">
-        <a href=""><span id="location">Location:</span>Lagos</a>
+        <ul>
+          <li><a href="#" class="footer_links">Advertising</a></li>
+          <li><a href="#" class="footer_links">Business</a></li>
+          <li><a href="#" class="footer_links">About</a></li>
+        </ul>
       </span>
       <span id="right_footer">
         <ul>

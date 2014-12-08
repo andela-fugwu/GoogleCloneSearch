@@ -23,6 +23,13 @@ var search_object = {
       $("#drop_down").toggle("slow");
     });
 
+    $('#drop_input_b').click( function (e) {
+      e.preventDefault();
+      var custom = $('#search_field_2').val() +'%20%22'+''+'%22%20-'+$('#minus_exact_input').val();
+      console.log(custom);
+      search_object.make_json(custom, "blogs");
+    });
+
     $(".do_change").click( function (event) {
       $(".do_change").removeClass('active');
       $(this).addClass('active');
@@ -41,8 +48,10 @@ var search_object = {
       $('#search_field_2').val(search);
       $("#drop_down").hide();
     });
-    
+
     $("#more").click( function () {
+      $("#more").text('Loading...');
+      $("#more").prop('disabled', true);
       if (search_object.post_number === 99)
       {
         $('#result').html("");
@@ -55,10 +64,13 @@ var search_object = {
       }
       else {
         search_object.update(search_object.data);
+        $("#more").prop('disabled', false);
+        $("#more").text('Load More');
       }
     });
 
-    $('#search_b').click( function () {
+    $('#search_b').click( function (e) {
+      e.preventDefault();
       var search = $('#search_field_2').val();
       search_object.make_json(search, "blogs");
     });
@@ -66,13 +78,21 @@ var search_object = {
 
   application: function (data) {
     console.log(data);
-    search_object.data = data;
-    search_object.update(data);
-    $('#loading').hide();
-    $('section').show();
+    if (data.totalResults === 0){
+      $('section').show();
+      $('#loading').hide();
+    }
+    else
+    {  
+      search_object.data = data;
+      search_object.update(data);
+      $('#loading').hide();
+      $('section').show();
+    }
   },
 
   make_json: function (search, type) {
+    search_object.post_number = 0;
     $('#result').html("");
     $('section').hide();
     $('#loading').show();
@@ -86,4 +106,4 @@ var search_object = {
     $.getJSON(api, options, search_object.application);
   }  
 }  
-search_object.init(); 
+search_object.init();  
