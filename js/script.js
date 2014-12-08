@@ -85,6 +85,7 @@ var search_object = {
   application: function (data) {
     console.log(data);
     if (data.totalResults === 0){
+      $('#result_time').html('0 results found');
       $('#result').html('<p>No Results found</p>');
       $('section').show();
       $('#loading').hide();
