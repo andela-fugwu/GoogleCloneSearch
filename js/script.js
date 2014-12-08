@@ -7,13 +7,15 @@ var search_object = {
     var current = search_object.post_number;
     $('#result_time').html('About ' + (parseInt(data.totalResults) + parseInt(data.moreResultsAvailable)) + ' results (0.16 seconds)');
 
-    for (var i = current; i <= 10 + current; i++) {
+    for (var i = current; i < 10 + current; i++) {
       result += '<li class="full_width" >';
       result += '<h2><a href="'+ posts[i].url +'" class="title_r no_overflow">'+ posts[i].thread.title +'</a></h2>';
       result +='<a href="'+ posts[i].url +'" class="link_r no_overflow">'+ posts[i].url +'</a>';
       result +='<p class="result_t no_overflow">'+ posts[i].text +'</p>';
       result +='</li>';
       search_object.post_number++;
+      if(search_object.post_number === data.totalResults )
+        break;
     };
     $('#result').append(result);
   },
@@ -52,7 +54,10 @@ var search_object = {
     $("#more").click( function () {
       $("#more").text('Loading...');
       $("#more").prop('disabled', true);
-      if (search_object.post_number === 99)
+      if(search_object.post_number === search_object.data.totalResults ){
+        $("#more").text('No more results');
+      }
+      else if (search_object.post_number === 99)
       {
         $('#result').html("");
         $('section').hide();
